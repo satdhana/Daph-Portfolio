@@ -31,6 +31,8 @@ export const PROJECTS = [
     role: "Junior Project Manager",
     categories: ["Product Management"],
     badge: "100% Manual Input Eliminated",
+    overview:
+      "As Junior Project Manager, Satria owned the full lifecycle of Aralia — PT Pegadaian's outsourcing (TAD) management system. The work spanned requirement gathering across five key areas, authoring the PRD, and coordinating System Analyst, Design, Engineering, and QA teams across eight sprints. The headline outcome was eliminating 100% of manual supervisor-assignment input through HCMS integration, alongside a restructured exit-management flow that closed offboarding gaps across regional offices.",
     highlights: [
       "Led 18 functional improvements across HCMS integration, payroll & exit management",
       "Managed 8 sprints end-to-end, from PRD authoring to QA sign-off",
@@ -46,6 +48,8 @@ export const PROJECTS = [
     role: "Project Manager & Product Strategist",
     categories: ["Product Management", "Mobile (Android/iOS)"],
     badge: "+30% CRO in 3 Months",
+    overview:
+      "Cococo was a conversion-focused product built at the Apple Developer Academy. Satria acted as PM and product strategist: diagnosing where users dropped off in the purchase funnel, then defining a dashboard and product-detail redesign supported by clearer informational labelling. Changes were validated through user testing and shipped via PRD-driven sprints, delivering a +30% conversion uplift within three months.",
     highlights: [
       "Diagnosed conversion bottlenecks across the purchase funnel",
       "Redesigned dashboard & product details with informational labels, validated via user testing",
@@ -61,6 +65,8 @@ export const PROJECTS = [
     role: "Freelance Product Designer",
     categories: ["UI/UX & Engineering"],
     badge: "End-to-End Product Design",
+    overview:
+      "For ICANN Technologies Indonesia, Satria delivered end-to-end UI/UX for a Hospital Management System web application — a clinical-operations platform where clarity and reliability matter. He owned the design system and hi-fi flows, and ran regular design-grooming sessions with engineering to keep iterations rapid, feasible, and faithful to the original specifications.",
     highlights: [
       "Owned end-to-end UI/UX design for a clinical operations web platform",
       "Ran design grooming sessions with engineering for rapid, functional iterations",
@@ -76,6 +82,8 @@ export const PROJECTS = [
     role: "UI/UX Engineer",
     categories: ["UI/UX & Engineering"],
     badge: "Design-to-Code Ownership",
+    overview:
+      "At PT Nusantara Bina Artha, Satria worked as a UI/UX Engineer bridging research and implementation. He conducted user interviews and usability testing aligned to Business Requirements Documents, translated findings into high-fidelity prototypes, and then took ownership of the front-end build — closing the gap between design intent and shipped product.",
     highlights: [
       "Conducted user interviews & usability testing aligned to BRDs",
       "Produced high-fidelity prototypes and owned front-end implementation",

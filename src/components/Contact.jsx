@@ -1,11 +1,14 @@
 import { useState } from "react";
-import { MapPin, Phone, ExternalLink, Linkedin, Github, Send, ChevronDown, FileText } from "lucide-react";
+import { MapPin, Phone, ExternalLink, Linkedin, Github, Send, ChevronDown, FileText, Mail, Check } from "lucide-react";
 import { toast } from "sonner";
 import { LINKS, SUBJECTS } from "../data/content";
 import { ChapterHeading, Reveal } from "./Reveal";
 
+const EMAIL = "dafaputra35@gmail.com";
+
 export const Contact = () => {
   const [form, setForm] = useState({ name: "", email: "", subject: SUBJECTS[0], message: "" });
+  const [copied, setCopied] = useState(false);
   const set = (k) => (e) => setForm({ ...form, [k]: e.target.value });
 
   const submit = (e) => {
@@ -13,6 +16,24 @@ export const Contact = () => {
     const text = `Hi Satria, I'm ${form.name} (${form.email}).\n\nSubject: ${form.subject}\n\n${form.message}`;
     window.open(`${LINKS.whatsapp}?text=${encodeURIComponent(text)}`, "_blank", "noopener");
     toast.success("Opening WhatsApp with your message pre-filled.");
+  };
+
+  const copyEmail = async () => {
+    try {
+      await navigator.clipboard.writeText(EMAIL);
+    } catch {
+      const el = document.createElement("textarea");
+      el.value = EMAIL;
+      el.style.position = "fixed";
+      el.style.opacity = "0";
+      document.body.appendChild(el);
+      el.select();
+      try { document.execCommand("copy"); } catch { /* noop */ }
+      document.body.removeChild(el);
+    }
+    setCopied(true);
+    toast.success("Email copied to clipboard.");
+    setTimeout(() => setCopied(false), 2000);
   };
 
   const inputCls =
@@ -30,10 +51,29 @@ export const Contact = () => {
               <div className="card-lift rounded-2xl border border-line bg-cardx p-6 flex items-start gap-4">
                 <MapPin size={18} className="text-accent-cyan mt-0.5 shrink-0" />
                 <div>
-                  <p className="text-sm font-semibold text-hi">Pesanggrahan, South Jakarta, Indonesia</p>
+                  <p className="text-sm font-semibold text-hi">Bintaro, South Jakarta, Indonesia</p>
                   <p className="text-xs text-faint mt-1">Open to hybrid & remote collaboration</p>
                 </div>
               </div>
+
+              <button
+                type="button"
+                data-testid="contact-email-copy"
+                onClick={copyEmail}
+                aria-label="Copy email address"
+                className="press card-lift w-full text-left rounded-2xl border border-line bg-cardx p-6 flex items-start gap-4"
+              >
+                {copied ? (
+                  <Check size={18} className="text-accent-cyan mt-0.5 shrink-0" />
+                ) : (
+                  <Mail size={18} className="text-accent-cyan mt-0.5 shrink-0" />
+                )}
+                <div className="min-w-0">
+                  <p className="text-sm font-semibold text-hi break-all">{EMAIL}</p>
+                  <p className="text-xs text-faint mt-1">{copied ? "Copied to clipboard!" : "Click to copy — email me directly"}</p>
+                </div>
+              </button>
+
               <a
                 data-testid="whatsapp-direct-link"
                 href={LINKS.whatsapp}
@@ -96,7 +136,7 @@ export const Contact = () => {
               <button
                 data-testid="contact-form-submit-button"
                 type="submit"
-                className="press w-full inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl font-semibold text-sm text-white"
+                className="press w-full inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl font-semibold text-sm text-white whitespace-nowrap"
                 style={{ background: "linear-gradient(100deg, var(--indigo), var(--cyan))" }}
               >
                 Send Message <Send size={15} />
