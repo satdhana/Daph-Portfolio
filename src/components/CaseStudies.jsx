@@ -105,6 +105,26 @@ const ProjectDetail = ({ p, onClose }) => {
             ))}
           </ul>
 
+          {p.links?.length > 0 && (
+            <>
+              <h4 className="text-xs font-semibold uppercase tracking-wider text-faint mt-7 mb-3">Work I've Done</h4>
+              <div className="flex flex-wrap gap-2.5">
+                {p.links.map((l) => (
+                  <a
+                    key={l.href}
+                    href={l.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="press inline-flex items-center gap-1.5 rounded-full border border-line px-3.5 py-2 text-sm font-medium text-lo hover:text-hi hover:border-[var(--cyan)] transition-colors"
+                  >
+                    {l.label}
+                    <ArrowUpRight size={15} />
+                  </a>
+                ))}
+              </div>
+            </>
+          )}
+
           <div className="flex flex-wrap gap-2 mt-7 pt-5 border-t border-line">
             {p.tags.map((t) => (
               <span key={t} className="font-mono-x text-[10px] tracking-wider uppercase text-faint border border-line rounded-full px-2.5 py-1">
