@@ -1,5 +1,5 @@
 export const LINKS = {
-  cv: "/assets/CV-Satria-Dafa-Putra-Wardhana-2026.pdf",
+  cv: "/assets/CV-Satria-Dafa-Putra-Wardhana(2026).pdf",
   notion: "https://app.notion.com/p/Daph-s-Portofolio-2ba2e9097cfd80b5aeeee4873f0be296",
   notionShort: "https://bit.ly/PortofolioDafa2025",
   whatsapp: "https://wa.me/6285713090494",
