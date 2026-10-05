@@ -52,3 +52,11 @@ vercel --prod
 Almost all copy lives in **`src/data/content.js`** — projects, experience, stats,
 skills, certifications, tools, and links. Edit there; you rarely need to touch the
 components.
+
+## Visual direction (Oct 2026 refresh)
+
+- Palette comes from the portrait: scarf green, vest black, shirt off-white. Tokens live at the top of `src/index.css`.
+- Fonts (Bricolage Grotesque + Newsreader) are self-hosted via `@fontsource-variable/*`; run `npm install` once after pulling.
+- The three-strand cord (`public/assets/braid-*.svg`) stands for the three disciplines: product, design, engineering.
+- Portrait: `public/assets/dafa-portrait.webp`. Link preview image: `public/assets/og.jpg`.
+- Add `cover: "/assets/your-image.webp"` to any project in `src/data/content.js` to show a real screenshot in its detail view.

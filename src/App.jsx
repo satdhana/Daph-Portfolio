@@ -3,7 +3,6 @@ import Lenis from "lenis";
 import { Toaster } from "sonner";
 import { Navbar } from "./components/Navbar";
 import { Hero } from "./components/Hero";
-import { Marquee } from "./components/Marquee";
 import { CaseStudies } from "./components/CaseStudies";
 import { HybridSkills } from "./components/HybridSkills";
 import { Experience } from "./components/Experience";
@@ -12,10 +11,11 @@ import { Contact } from "./components/Contact";
 import { Footer } from "./components/Footer";
 
 function App() {
-  const [light, setLight] = useState(false);
+  const [dark, setDark] = useState(false);
 
   useEffect(() => {
-    const lenis = new Lenis({ duration: 1.15, smoothWheel: true });
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const lenis = new Lenis({ duration: 1.1, smoothWheel: true });
     window.__lenis = lenis;
     let rafId;
     const raf = (time) => {
@@ -31,15 +31,14 @@ function App() {
   }, []);
 
   useEffect(() => {
-    document.documentElement.classList.toggle("light", light);
-  }, [light]);
+    document.documentElement.classList.toggle("dark", dark);
+  }, [dark]);
 
   return (
-    <div className="App noise bg-base text-hi">
-      <Navbar light={light} onToggleTheme={() => setLight(!light)} />
+    <div className="App bg-paper text-ink">
+      <Navbar dark={dark} onToggleTheme={() => setDark(!dark)} />
       <main>
         <Hero />
-        <Marquee />
         <CaseStudies />
         <HybridSkills />
         <Experience />
@@ -47,7 +46,7 @@ function App() {
         <Contact />
       </main>
       <Footer />
-      <Toaster position="bottom-center" theme={light ? "light" : "dark"} />
+      <Toaster position="bottom-center" theme={dark ? "dark" : "light"} />
     </div>
   );
 }

@@ -1,49 +1,33 @@
-import { Target, Palette, Code2, Check } from "lucide-react";
 import { HYBRID_COLUMNS } from "../data/content";
-import { ChapterHeading, Reveal } from "./Reveal";
+import { ChapterHeading } from "./Reveal";
 
-const ICONS = { Target, Palette, Code2 };
+// Each discipline is one strand of the cord: green, black, white.
+const STRANDS = ["bg-[#188B51]", "bg-[#1b1d1b] dark:bg-[#4a514a]", "bg-[#f6f7f1] border border-[#9aa096]"];
 
 export const HybridSkills = () => (
-  <section id="hybrid-skills" className="relative py-24 sm:py-32 bg-soft border-y border-line">
+  <section id="hybrid-skills" className="relative py-24 sm:py-32 bg-paper2">
     <div className="max-w-6xl mx-auto px-5 sm:px-8">
-      <ChapterHeading number="03" kicker="Hybrid Advantage" title="One person who speaks strategy, design, and engineering." testid="hybrid-skills-heading" />
-      <Reveal delay={0.1}>
-        <p className="text-lo text-base sm:text-lg mt-5 max-w-2xl leading-relaxed">
-          Most teams lose weeks in translation between PM, design, and dev. I close that gap — writing PRDs an
-          engineer respects, and designing interfaces a business case can defend.
-        </p>
-      </Reveal>
+      <ChapterHeading
+        title="One person who speaks strategy, design, and engineering."
+        sub="Most teams lose weeks in translation between PM, design, and dev. I close that gap by writing PRDs an engineer respects and designing interfaces a business case can defend."
+        testid="hybrid-skills-heading"
+      />
 
-      <div className="grid md:grid-cols-3 gap-6 mt-12">
-        {HYBRID_COLUMNS.map((col, i) => {
-          const Icon = ICONS[col.icon];
-          return (
-            <Reveal key={col.title} delay={i * 0.12}>
-              <div
-                data-testid={`hybrid-column-${i + 1}`}
-                className="card-lift h-full rounded-2xl border border-line bg-cardx p-7"
-              >
-                <div
-                  className="w-11 h-11 rounded-xl flex items-center justify-center mb-6"
-                  style={{ background: "var(--badge-bg)", color: "var(--badge-text)" }}
-                >
-                  <Icon size={20} />
-                </div>
-                <h3 className="text-lg font-bold text-hi tracking-tight">{col.title}</h3>
-                <p className="text-sm text-faint mt-2 mb-6">{col.desc}</p>
-                <ul className="space-y-3">
-                  {col.skills.map((s) => (
-                    <li key={s} className="flex items-start gap-2.5 text-sm text-lo">
-                      <Check size={15} className="mt-0.5 shrink-0 text-accent-cyan" />
-                      {s}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </Reveal>
-          );
-        })}
+      <div className="grid md:grid-cols-3 gap-x-12 gap-y-14 mt-16">
+        {HYBRID_COLUMNS.map((col, i) => (
+          <div key={col.title} data-testid={`hybrid-column-${i + 1}`}>
+            <div className={`h-2 w-full rounded-full ${STRANDS[i]}`} aria-hidden />
+            <h3 className="font-display text-xl font-bold tracking-[-0.015em] mt-6">{col.title}</h3>
+            <p className="text-ink2 mt-2 mb-6">{col.desc}</p>
+            <ul className="border-t border-hair">
+              {col.skills.map((s) => (
+                <li key={s} className="font-display text-[0.95rem] font-medium py-3 border-b border-hair">
+                  {s}
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
       </div>
     </div>
   </section>

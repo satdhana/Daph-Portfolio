@@ -1,46 +1,38 @@
-import { Award, Figma, Framer, KanbanSquare, PenTool, Github, Gitlab, Hammer, Code2, Smartphone } from "lucide-react";
 import { CERTIFICATIONS, TOOLS } from "../data/content";
-import { ChapterHeading, Reveal } from "./Reveal";
-
-const TOOL_ICONS = { Figma, Framer, KanbanSquare, PenTool, Github, Gitlab, Hammer, Code2, Smartphone };
+import { ChapterHeading } from "./Reveal";
 
 export const Certifications = () => (
-  <section id="certifications" className="relative py-24 sm:py-32 bg-soft border-y border-line">
-    <div className="max-w-6xl mx-auto px-5 sm:px-8">
-      <ChapterHeading number="05" kicker="Ecosystem" title="Certified foundations, battle-tested tools." testid="certifications-heading" />
-
-      <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 mt-12">
-        {CERTIFICATIONS.map((c, i) => (
-          <Reveal key={c.name} delay={i * 0.08}>
-            <div data-testid={`certification-card-${i + 1}`} className="card-lift h-full rounded-2xl border border-line bg-cardx p-6">
-              <div className="w-10 h-10 rounded-xl flex items-center justify-center mb-5" style={{ background: "var(--badge-bg)", color: "var(--badge-text)" }}>
-                <Award size={18} />
-              </div>
-              <h3 className="text-base font-bold text-hi tracking-tight">{c.name}</h3>
-              <p className="font-mono-x text-[11px] tracking-[0.15em] uppercase text-faint mt-2">{c.issuer}</p>
-            </div>
-          </Reveal>
-        ))}
+  <section id="certifications" className="relative py-24 sm:py-32 bg-paper2">
+    <div className="max-w-6xl mx-auto px-5 sm:px-8 grid lg:grid-cols-2 gap-x-16 gap-y-16">
+      <div>
+        <ChapterHeading title="Certified foundations" testid="certifications-heading" />
+        <ul className="mt-10 border-t border-hair">
+          {CERTIFICATIONS.map((c, i) => (
+            <li
+              key={c.name}
+              data-testid={`certification-card-${i + 1}`}
+              className="flex flex-wrap items-baseline justify-between gap-x-6 py-4 border-b border-hair"
+            >
+              <span className="font-display text-lg font-semibold">{c.name}</span>
+              <span className="text-ink3">{c.issuer}</span>
+            </li>
+          ))}
+        </ul>
       </div>
 
-      <Reveal delay={0.15}>
-        <p className="overline-x mt-14 mb-6">Daily Tool Stack</p>
-      </Reveal>
-      <div className="grid grid-cols-3 sm:grid-cols-5 lg:grid-cols-9 gap-3">
-        {TOOLS.map((t, i) => {
-          const Icon = TOOL_ICONS[t.icon];
-          return (
-            <Reveal key={t.name} delay={i * 0.04}>
-              <div
-                data-testid={`tool-${t.name.toLowerCase().replace(/\s+/g, "-")}`}
-                className="card-lift rounded-xl border border-line bg-cardx px-3 py-5 flex flex-col items-center gap-2.5 text-center"
-              >
-                <Icon size={20} className="text-lo" />
-                <span className="text-[11px] font-medium text-lo leading-tight">{t.name}</span>
-              </div>
-            </Reveal>
-          );
-        })}
+      <div>
+        <h2 className="font-display text-3xl sm:text-4xl lg:text-[2.75rem] font-bold tracking-[-0.025em] leading-[1.16]">Daily tools</h2>
+        <ul className="mt-10 flex flex-wrap gap-x-3 gap-y-3">
+          {TOOLS.map((t) => (
+            <li
+              key={t.name}
+              data-testid={`tool-${t.name.toLowerCase().replace(/\s+/g, "-")}`}
+              className="font-display text-[0.95rem] font-semibold px-4 py-2 border border-[var(--ink)] rounded-md"
+            >
+              {t.name}
+            </li>
+          ))}
+        </ul>
       </div>
     </div>
   </section>

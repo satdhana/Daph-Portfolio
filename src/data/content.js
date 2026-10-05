@@ -7,10 +7,22 @@ export const LINKS = {
   github: "https://github.com/satriadafa",
 };
 
+export const PROFILE = {
+  name: "Satria Dafa Putra Wardhana",
+  short: "Satria Dafa",
+  portrait: "/assets/dafa-portrait.webp",
+  portraitAlt: "Portrait of Satria Dafa smiling, holding a microphone and an envelope",
+  email: "dafaputra35@gmail.com",
+  location: "Bintaro, South Jakarta",
+};
+
+// Optional: add `cover: "/assets/your-screenshot.webp"` to any project below
+// and it will appear at the top of that project's detail view.
+
 export const NAV_LINKS = [
   { label: "Overview", href: "#overview", id: "overview" },
-  { label: "Case Studies", href: "#case-studies", id: "case-studies" },
-  { label: "Hybrid Skills", href: "#hybrid-skills", id: "hybrid-skills" },
+  { label: "Case studies", href: "#case-studies", id: "case-studies" },
+  { label: "Hybrid skills", href: "#hybrid-skills", id: "hybrid-skills" },
   { label: "Experience", href: "#experience", id: "experience" },
   { label: "Contact", href: "#contact", id: "contact" },
 ];
@@ -38,8 +50,6 @@ export const PROJECTS = [
       "Managed 8 sprints end-to-end, from PRD authoring to QA sign-off",
     ],
     tags: ["PRD", "Project Management", "HCMS Integration", "Agile/Jira"],
-    image:
-      "https://images.pexels.com/photos/36950633/pexels-photo-36950633.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
   },
   {
     id: "seefood",
@@ -60,8 +70,6 @@ export const PROJECTS = [
       { label: "SeeFood — Phase 1", href: "https://www.figma.com/proto/FcZANRxbojcXNzw7OQaZOS/SeeFood?page-id=0:1&node-id=92-505&viewport=482,-821,0.51&t=cYM2I0SGIkolzmsm-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=92:550&show-proto-sidebar=1" },
       { label: "SeeFood — Phase 2", href: "https://www.figma.com/proto/4ODrmD60poPEnfNy7tlgUN/SeeFood-Part-2?page-id=0:1&node-id=117-8702&viewport=-3508,-1566,0.48&t=Kxv3EKw6IADXOdEh-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=66:2757&show-proto-sidebar=1" },
     ],
-    image:
-      "https://images.pexels.com/photos/958545/pexels-photo-958545.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
   },
   {
     id: "bebas",
@@ -81,8 +89,6 @@ export const PROJECTS = [
     links: [
       { label: "Bebas App", href: "https://www.figma.com/design/BGMeVaUhZcrmJE2U9CMZ7E/Bebas-App?node-id=0-1&t=puFogS6jcfzT1dnF-1" },
     ],
-    image:
-      "https://images.pexels.com/photos/7516363/pexels-photo-7516363.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
   },
   {
     id: "san-n-dals",
@@ -102,8 +108,6 @@ export const PROJECTS = [
     links: [
       { label: "San n Dals — Assets", href: "https://drive.google.com/drive/folders/1m_sdDvz35aqmdIHnFu56Qm7HV1NTR_n6" },
     ],
-    image:
-      "https://images.pexels.com/photos/275033/pexels-photo-275033.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
   },
   {
     id: "cococo",
@@ -123,8 +127,6 @@ export const PROJECTS = [
     links: [
       { label: "Cococo App", href: "https://www.figma.com/design/X3q8fM8bqHTrtsPsZK5ovl/Double-Three---COCOCO-V1-TEAM-3?node-id=40580-7060&t=WPtXMp0XNBC61R0E-1" },
     ],
-    image:
-      "https://images.unsplash.com/photo-1706700392642-dee59f678a09?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1ODR8MHwxfHNlYXJjaHw0fHxtb2Rlcm4lMjB0ZWNoJTIwbW9iaWxlJTIwYXBwJTIwZGVzaWduJTIwVUklMjBjYXNlJTIwc3R1ZHklMjBtb2NrdXB8ZW58MHx8fHwxNzg3NDgyMjMyfDA&ixlib=rb-4.1.0&q=85",
   },
   {
     id: "kopling",
@@ -144,8 +146,6 @@ export const PROJECTS = [
     links: [
       { label: "Kopling — itch.io", href: "https://empat-mata-studio.itch.io/kopling-stories-in-a-cup" },
     ],
-    image:
-      "https://images.pexels.com/photos/3945683/pexels-photo-3945683.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
   },
   {
     id: "hms",
@@ -165,8 +165,6 @@ export const PROJECTS = [
     links: [
       { label: "HMS Web Project", href: "https://www.figma.com/design/IyD33wkvyE7PuyJhHQptqN/HMS-Final-Project?node-id=6297-54827&p=f" },
     ],
-    image:
-      "https://images.pexels.com/photos/4094199/pexels-photo-4094199.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
   },
   {
     id: "nusaferol",
@@ -186,8 +184,6 @@ export const PROJECTS = [
     links: [
       { label: "Nusaferol App", href: "https://www.figma.com/proto/9UJX3tXwRiEaj71NXCdE6a/Nusaferol?page-id=0:1&node-id=7-42&viewport=658,1878,0.19&t=ciFEBbUsctqpelgJ-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=7:18&show-proto-sidebar=1" },
     ],
-    image:
-      "https://images.pexels.com/photos/27141316/pexels-photo-27141316.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
   },
   {
     id: "nusumma-go",
@@ -207,8 +203,6 @@ export const PROJECTS = [
     links: [
       { label: "Nusumma Go App", href: "https://www.figma.com/proto/pcMEhH0s1Sonyp9bLZnAqQ/Nusumma-Go?page-id=0:1&node-id=306-7508&viewport=1149,-112,0.19&t=0QnnYIaq2N5ZR6TM-1&scaling=min-zoom&content-scaling=fixed" },
     ],
-    image:
-      "https://images.pexels.com/photos/34578/pexels-photo.jpg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
   },
 ];
 
@@ -299,15 +293,6 @@ export const TOOLS = [
   { name: "Android Studio", icon: "Smartphone" },
 ];
 
-export const MARQUEE_ITEMS = [
-  "PRODUCT STRATEGY",
-  "+30% CONVERSION UPLIFT",
-  "UI/UX ENGINEERING",
-  "TECHNICAL FEASIBILITY",
-  "100% MANUAL INPUT ELIMINATED",
-  "6+ PRODUCTS LAUNCHED",
-  "DATA-DRIVEN EXECUTION",
-];
 
 export const SUBJECTS = [
   "Full-time Product Manager Role",
