@@ -275,11 +275,11 @@ export const EXPERIENCE = [
 ];
 
 export const CERTIFICATIONS = [
+  { name: "Project Manager Intern", issuer: "Apple Developer Academy" },
   { name: "Product Management", issuer: "Apiary Academy" },
   { name: "UI Design", issuer: "Thinker Academy" },
   { name: "UI/UX Design", issuer: "Dibimbing.id" },
   { name: "Android Developer", issuer: "Glints Academy" },
-  { name: "Project Manager Intern", issuer: "Apple Developer Academy" },
 ];
 
 export const TOOLS = [
